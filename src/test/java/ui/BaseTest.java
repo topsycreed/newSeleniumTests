@@ -8,10 +8,10 @@ import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-import static chursov.patterns.WebDriverFactory.createWebDriver;
+import static chursov.patterns.factory.WebDriverFactory.createWebDriver;
 
-class BaseTest {
-    WebDriver driver;
+public class BaseTest {
+    protected WebDriver driver;
     TestPropertiesConfig configProperties = ConfigFactory.create(TestPropertiesConfig.class, System.getProperties());
     protected static final String BASE_URL = "https://bonigarcia.dev/selenium-webdriver-java/";
 
