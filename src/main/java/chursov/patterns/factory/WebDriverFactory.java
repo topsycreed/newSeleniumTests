@@ -1,4 +1,4 @@
-package chursov.patterns;
+package chursov.patterns.factory;
 
 import chursov.configs.TestPropertiesConfig;
 import org.aeonbits.owner.ConfigFactory;

@@ -5,15 +5,13 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-import static chursov.patterns.WebDriverFactory.createWebDriver;
+import static chursov.patterns.factory.WebDriverFactory.createWebDriver;
 
-class BaseTest {
-    WebDriver driver;
+public class BaseTest {
+    protected WebDriver driver;
     TestPropertiesConfig configProperties = ConfigFactory.create(TestPropertiesConfig.class, System.getProperties());
     protected static final String BASE_URL = "https://bonigarcia.dev/selenium-webdriver-java/";
 
