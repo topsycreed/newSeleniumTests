@@ -1,5 +1,6 @@
 package chursov.fluentPages;
 
+import chursov.components.HeaderComponent;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,8 +31,11 @@ public class FluentLoginPage extends FluentBasePage {
     @CacheLookup
     WebElement invalidCredentialsBox;
 
+    HeaderComponent header;
+
     public FluentLoginPage(WebDriver driver) {
         super(driver);
+        header = new HeaderComponent(driver);
         PageFactory.initElements(driver, this);
         visit("https://bonigarcia.dev/selenium-webdriver-java/login-form.html");
     }
@@ -66,5 +70,9 @@ public class FluentLoginPage extends FluentBasePage {
     public FluentLoginPage checkInvalidCredentialsBoxIsNotPresent() {
         assertThat(isDisplayed(invalidCredentialsBox)).isFalse();
         return this;
+    }
+
+    public HeaderComponent getHeader() {
+        return header;
     }
 }
