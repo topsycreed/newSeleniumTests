@@ -2,6 +2,7 @@ package ui.selenide;
 
 import chursov.selenide.pages.HomePage;
 import chursov.selenide.pages.WebFormPage;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static chursov.pageObjects.HomePage.BASE_URL;
@@ -9,10 +10,15 @@ import static com.codeborne.selenide.Condition.value;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SelenideTests {
+    HomePage homePage;
+
+    @BeforeEach
+    void setup() {
+        homePage = new HomePage();
+    }
 
     @Test
     void openHomePageTest() {
-        HomePage homePage = new HomePage();
         homePage.open();
 
         assertEquals(BASE_URL, homePage.getCurrentUrl());
@@ -20,7 +26,6 @@ class SelenideTests {
 
     @Test
     void openWebFormPageTest() {
-        HomePage homePage = new HomePage();
         homePage.open();
         WebFormPage webFormPage = homePage.openWebFormPage();
 
@@ -30,7 +35,6 @@ class SelenideTests {
 
     @Test
     void readonlyTextTest() {
-        HomePage homePage = new HomePage();
         homePage.open();
         WebFormPage webFormPage = homePage.openWebFormPage();
 
