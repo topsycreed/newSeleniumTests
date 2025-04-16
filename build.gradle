@@ -16,6 +16,7 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:4.31.0'
     implementation 'org.assertj:assertj-core:3.27.3'
     implementation 'io.qameta.allure:allure-junit5:2.29.1'
+    implementation 'com.codeborne:selenide:7.8.1'
 }
 
 test {
