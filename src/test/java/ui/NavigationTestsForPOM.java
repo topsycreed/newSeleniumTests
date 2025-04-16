@@ -11,12 +11,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Feature("POM")
 class NavigationTestsForPOM extends BaseTestForPOM {
     @Test
-    void openNavFormTest() {
+    void openNavFormTest() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         NavigationPage navigationPage = homePage.openNavigationPage();
         String currentUrl = navigationPage.getCurrentUrl();
         String title = navigationPage.getTitle();
         String webFormUrl = navigationPage.getUrl();
+
+        navigationPage.clickNextButton();
+        navigationPage.clickNextButton();
+        Thread.sleep(3000);
 
         assertEquals(BASE_URL + webFormUrl, currentUrl);
         assertEquals("Navigation example", title);
