@@ -32,8 +32,7 @@ class BaseTest {
 
     private void initDriver() {
         String remoteUrl = System.getenv("SELENIUM_REMOTE_URL");
-        Allure.addAttachment("remote", remoteUrl);
-        if (remoteUrl != null || !remoteUrl.isEmpty()) {
+        if (remoteUrl != null && !remoteUrl.isEmpty()) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");  // Add headless mode
             options.addArguments("--disable-gpu"); // Switch off GPU, because we don't need it in headless mode
